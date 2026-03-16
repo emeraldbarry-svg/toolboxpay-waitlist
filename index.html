@@ -4,60 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ToolboxPay — Early Access Waitlist</title>
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolboxpay.com/">
+  <meta property="og:title" content="ToolboxPay — Built For The Trades">
+  <meta property="og:description" content="Stop doing admin on your weekends. Quotes, invoices, and profit analysis from your phone.">
+  <meta property="og:image" content="https://toolboxpay.com/toolboxpay%20dashboard.png">
+
   <link rel="icon" href="https://fav.farm/🟠" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --orange: #ff6600; --bg: #111111; --white: #ffffff; --muted: #999999; --steel: #333333; }
-    body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--white); line-height: 1.6; }
+    
+    /* Fix #2: Force White Text Everywhere */
+    body, p, h1, h2, h3, h4, h5, h6, span, label {
+      color: var(--white) !important;
+    }
+
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background-color: var(--bg); 
+      line-height: 1.6; 
+    }
+    
     .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
     .topbar { padding: 24px 0; border-bottom: 1px solid var(--steel); }
     .logo { font-size: 1.45rem; font-weight: 800; text-decoration: none; }
     .logo .white { color: var(--white); }
     .logo .orange { color: var(--orange); }
+    
     .hero { padding: 60px 0 20px; text-align: center; }
     .hero h1 { font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; text-transform: uppercase; }
     .hero h1 .accent { color: var(--orange); }
     
-    /* The Form Container */
-    .form-section { max-width: 700px; margin: 0 auto 60px; }
+    /* Improved Hero Subheadline */
+    .hero-sub { max-width:650px; margin:20px auto; color: var(--muted) !important; }
+    
+    /* Fix #3: Improved Form Card Contrast */
     .form-card { 
-      background: #181818; 
+      background: var(--bg); 
       border: 1px solid var(--steel);
       border-radius: 16px; 
+      padding: 10px; 
+      max-width: 700px; 
+      margin: 0 auto 60px;
       min-height: 600px;
-      overflow: hidden;
       box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     }
 
     .preview-section { padding: 80px 0; border-top: 1px solid var(--steel); background: #0c0c0c; }
     .preview-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     .preview-text h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; }
-    .preview-text p { color: var(--muted); font-size: 1.15rem; }
+    .preview-text p { color: var(--muted) !important; font-size: 1.15rem; }
     .preview-image-wrap { border: 1px solid var(--steel); border-radius: 12px; overflow: hidden; }
     .preview-image-wrap img { width: 100%; display: block; }
+    
     footer { padding: 40px 0; text-align: center; color: #444; font-size: 0.85rem; }
     @media (max-width: 860px) { .preview-inner { grid-template-columns: 1fr; text-align: center; } }
   </style>
 </head>
 <body>
   <header class="topbar">
-    <div class="container"><a href="#" class="logo"><span class="white">toolbox</span><span class="orange">PAY</span></a></div>
+    <div class="container">
+      <a href="#" class="logo">
+        <span class="white">toolbox</span><span class="orange">PAY</span>
+      </a>
+    </div>
   </header>
 
   <section class="hero">
     <div class="container">
       <h1>Spend Less Time On Admin.<br /><span class="accent">More Time On The Job.</span></h1>
+      <p class="hero-sub">Join the early access list and be one of the first trades businesses to test ToolboxPay.</p>
     </div>
   </section>
 
   <div class="container">
-    <div class="form-section">
-      <div class="form-card">
-        <iframe data-tally-src="https://tally.so/embed/ZjJooo?alignLeft=1&hideTitle=1&transparentBackground=0&dynamicHeight=1&v=NEW_START" loading="lazy" width="100%" height="600" frameborder="0" title="Join ToolboxPay"></iframe>
-      </div>
+    <div class="form-card">
+      <iframe data-tally-src="https://tally.so/embed/ZjJooo?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&v=FIX_FINAL" 
+              loading="lazy" 
+              width="100%" 
+              height="600" 
+              frameborder="0" 
+              title="Join ToolboxPay"></iframe>
     </div>
   </div>
 
@@ -75,7 +108,10 @@
     </div>
   </section>
 
-  <footer><p>&copy; 2026 ToolboxPay. <a href="privacy.html" style="color:#444;">Privacy Policy</a> | <a href="terms.html" style="color:#444;">Terms of Service</a></p></footer>
+  <footer>
+    <p>&copy; 2026 ToolboxPay. <a href="privacy.html" style="color:#444;">Privacy Policy</a> | <a href="terms.html" style="color:#444;">Terms of Service</a></p>
+  </footer>
+
   <script src="https://tally.so/Widgets/Embed/v1.js"></script>
 </body>
 </html>
