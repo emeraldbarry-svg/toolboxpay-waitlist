@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're on the List — ToolboxPay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Variables ────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange:        #ff6600;
+      --bg:            #111111;
+      --bg-alt:        #0d0d0d;
+      --card:          #181818;
+      --steel:         #333333;
+      --white:         #ffffff;
+      --muted:         #999999;
+      --radius:        24px;
+      --transition:    0.22s ease;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 24px;
+      line-height: 1.6;
+    }
+
+    /* ─── Success Card ─────────────────────────────────────────── */
+    .success-card {
+      background: var(--card);
+      border: 1px solid var(--steel);
+      border-radius: var(--radius);
+      padding: 60px 40px;
+      max-width: 550px;
+      width: 100%;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    }
+
+    .icon-box {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 102, 0, 0.1);
+      border: 2px solid var(--orange);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+    h1 span { color: var(--orange); }
+
+    .thank-you-msg {
+      color: var(--muted);
+      margin-bottom: 32px;
+      font-size: 1.1rem;
+    }
+
+    /* ─── Next Steps Box ───────────────────────────────────────── */
+    .next-steps {
+      text-align: left;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 24px;
+      border-radius: 16px;
+      border-left: 4px solid var(--orange);
+    }
+
+    .next-steps h3 {
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      color: var(--orange);
+    }
+
+    .next-steps ul { list-style: none; }
+    .next-steps li {
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      display: flex;
+      gap: 12px;
+      color: #dfdfdf;
+    }
+    .next-steps li::before {
+      content: "→";
+      color: var(--orange);
+      font-weight: bold;
+    }
+
+    /* ─── Logo ─────────────────────────────────────────────────── */
+    .logo {
+      position: absolute;
+      top: 40px;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 1.25rem;
+    }
+    .logo .white { color: var(--white); }
+    .logo .orange { color: var(--orange); }
+
+    footer {
+      margin-top: 48px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <span class="white">toolbox</span><span class="orange">PAY</span>
+  </div>
+
+  <div class="success-card">
+    <div class="icon-box">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff6600" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    
+    <h1>You're <span>In.</span></h1>
+    <p class="thank-you-msg">Thanks for joining the ToolboxPay early access list. We’re building this to help you kill the admin and get paid faster.</p>
+
+    <div class="next-steps">
+      <h3>What happens next?</h3>
+      <ul>
+        <li><strong>Check your inbox:</strong> We have sent a confirmation email to the address you provided.</li>
+        <li><strong>Stay tuned:</strong> We are releasing invites in small batches to ensure the best experience for everyone.</li>
+        <li><strong>Founding member status:</strong> As an early adopter, you will get exclusive pricing when we go live.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 ToolboxPay. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
