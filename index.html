@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://toolboxpay.com/">
-  <meta property="og:title" content="ToolboxPay — Built For The Trades">
-  <meta property="og:description" content="Stop doing admin on your weekends. Quotes, invoices, and profit analysis from your phone.">
-  <meta property="og:image" content="https://toolboxpay.com/toolboxpay%20dashboard.png">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ToolboxPay — Early Access Waitlist</title>
@@ -26,19 +20,15 @@
     .hero { padding: 60px 0 20px; text-align: center; }
     .hero h1 { font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; text-transform: uppercase; }
     .hero h1 .accent { color: var(--orange); }
-    .countdown-container { margin-bottom: 40px; display: flex; justify-content: center; gap: 15px; }
-    .time-block { background: rgba(255,255,255,0.03); border: 1px solid var(--steel); padding: 15px; border-radius: 12px; min-width: 85px; text-align: center; }
-    .time-num { display: block; font-size: 1.8rem; font-weight: 800; color: var(--orange); }
-    .time-label { font-size: 0.65rem; text-transform: uppercase; color: var(--muted); }
     
+    /* The Form Container */
+    .form-section { max-width: 700px; margin: 0 auto 60px; }
     .form-card { 
       background: #181818; 
       border: 1px solid var(--steel);
       border-radius: 16px; 
-      padding: 10px; 
-      max-width: 700px; 
-      margin: 0 auto 60px;
-      min-height: 550px;
+      min-height: 600px;
+      overflow: hidden;
       box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     }
 
@@ -56,22 +46,21 @@
   <header class="topbar">
     <div class="container"><a href="#" class="logo"><span class="white">toolbox</span><span class="orange">PAY</span></a></div>
   </header>
+
   <section class="hero">
     <div class="container">
       <h1>Spend Less Time On Admin.<br /><span class="accent">More Time On The Job.</span></h1>
-      <div class="countdown-container" id="timer">
-        <div class="time-block"><span class="time-num" id="days">00</span><span class="time-label">Days</span></div>
-        <div class="time-block"><span class="time-num" id="hours">00</span><span class="time-label">Hrs</span></div>
-        <div class="time-block"><span class="time-num" id="mins">00</span><span class="time-label">Mins</span></div>
-        <div class="time-block"><span class="time-num" id="secs">00</span><span class="time-label">Secs</span></div>
-      </div>
     </div>
   </section>
+
   <div class="container">
-    <div class="form-card">
-      <iframe data-tally-src="https://tally.so/embed/ZjJooo?alignLeft=1&hideTitle=1&transparentBackground=0&dynamicHeight=1&v=FORCE_REFRESH" loading="lazy" width="100%" height="550" frameborder="0" title="Join ToolboxPay"></iframe>
+    <div class="form-section">
+      <div class="form-card">
+        <iframe data-tally-src="https://tally.so/embed/ZjJooo?alignLeft=1&hideTitle=1&transparentBackground=0&dynamicHeight=1&v=NEW_START" loading="lazy" width="100%" height="600" frameborder="0" title="Join ToolboxPay"></iframe>
+      </div>
     </div>
   </div>
+
   <section class="preview-section">
     <div class="container">
       <div class="preview-inner">
@@ -85,18 +74,8 @@
       </div>
     </div>
   </section>
+
   <footer><p>&copy; 2026 ToolboxPay. <a href="privacy.html" style="color:#444;">Privacy Policy</a> | <a href="terms.html" style="color:#444;">Terms of Service</a></p></footer>
   <script src="https://tally.so/Widgets/Embed/v1.js"></script>
-  <script>
-    const launchDate = new Date("April 1, 2026 00:00:00").getTime();
-    setInterval(function() {
-      const now = new Date().getTime();
-      const dist = launchDate - now;
-      document.getElementById("days").innerHTML = Math.floor(dist / (1000 * 60 * 60 * 24));
-      document.getElementById("hours").innerHTML = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      document.getElementById("mins").innerHTML = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
-      document.getElementById("secs").innerHTML = Math.floor((dist % (1000 * 60)) / 1000);
-    }, 1000);
-  </script>
 </body>
 </html>
