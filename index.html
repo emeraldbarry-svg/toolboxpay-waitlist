@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
   
   <style>
+    /* ─── Variables & Reset ────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     
     :root { 
@@ -33,16 +34,19 @@
     
     .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
     
+    /* ─── Header ─────────────────────────────────────────────── */
     .topbar { padding: 32px 0; border-bottom: 1px solid var(--steel); margin-bottom: 40px; }
     .logo { font-size: 1.6rem; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; }
     .logo .white { color: var(--white); }
     .logo .orange { color: var(--orange); text-transform: uppercase; }
     
+    /* ─── Hero Section ───────────────────────────────────────── */
     .hero { padding: 60px 0; }
     .hero h1 { font-size: clamp(2.2rem, 8vw, 4.2rem); font-weight: 900; line-height: 1.05; margin-bottom: 24px; text-transform: uppercase; letter-spacing: -1px; }
     .hero h1 .accent { color: var(--orange); }
     .hero-sub { max-width: 600px; margin: 0 auto 48px; color: var(--muted); font-size: 1.25rem; }
 
+    /* ─── Form Card ──────────────────────────────────────────── */
     .form-card { 
       background: var(--card); 
       border: 1px solid var(--steel); 
@@ -56,7 +60,6 @@
     
     label { display: block; margin-bottom: 8px; font-size: 0.85rem; font-weight: 600; color: var(--muted); }
     
-    /* PURE ORANGE SELECTION BOX */
     select {
       width: 100%;
       background-color: var(--orange) !important;
@@ -86,6 +89,7 @@
     }
     .cta-button:hover { transform: translateY(-3px); opacity: 0.9; }
 
+    /* ─── Preview Section ────────────────────────────────────── */
     .preview-section { padding: 80px 0; border-top: 1px solid var(--steel); background: #050505; }
     .preview-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; text-align: left; }
     .preview-text h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; text-transform: uppercase; }
@@ -150,6 +154,6 @@
     </p>
   </footer>
 
-  <script src="https://tally.so/Widgets/Embed/v1.js?v=20"></script>
+  <script src="https://tally.so/Widgets/Embed/v1.js?v=99"></script>
 </body>
 </html>
