@@ -7,126 +7,41 @@
   <link rel="icon" href="https://fav.farm/🟠" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
   <style>
-    /* Reset and Base Styles */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { 
-      --orange: #ff6600; 
-      --bg: #0a0a0a; 
-      --card: #141414; 
-      --white: #ffffff; 
-      --muted: #999999; 
-      --steel: #333333; 
-    }
-    body { 
-      font-family: 'Inter', sans-serif; 
-      background-color: var(--bg); 
-      color: var(--white); 
-      line-height: 1.6; 
-      text-align: center; 
-      padding: 60px 20px; 
-    }
+    :root { --orange: #ff6600; --bg: #0a0a0a; --card: #141414; --white: #ffffff; --muted: #999999; --steel: #333333; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--white); line-height: 1.6; text-align: center; padding: 60px 20px; }
     .container { max-width: 1100px; margin: 0 auto; }
-    
-    /* Branding */
     .logo { font-size: 1.6rem; font-weight: 800; margin-bottom: 40px; }
     .logo span { color: var(--orange); text-transform: uppercase; }
-    
-    /* Typography */
     h1 { font-size: clamp(2rem, 8vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
     h1 b { color: var(--orange); font-weight: 900; }
     p.sub { color: var(--muted); margin-bottom: 40px; font-size: 1.2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-    
-    /* Form Card */
-    .card { 
-      background: var(--card); 
-      border: 1px solid var(--steel); 
-      padding: 40px; 
-      border-radius: 14px; 
-      text-align: left; 
-      max-width: 480px; 
-      margin: 0 auto; 
-    }
-    .card h2 { color: var(--orange); text-align: center; margin-bottom: 24px; text-transform: uppercase; font-weight: 900; }
+    .card { background: var(--card); border: 1px solid var(--steel); padding: 40px; border-radius: 14px; text-align: left; max-width: 480px; margin: 0 auto; }
     .group { margin-bottom: 20px; }
     label { display: block; margin-bottom: 8px; font-weight: 700; color: var(--muted); font-size: 0.8rem; text-transform: uppercase; }
-    
-    /* Inputs */
-    input { 
-      width: 100%; 
-      padding: 14px; 
-      background: #1f1f1f; 
-      color: white; 
-      border: 1px solid var(--steel); 
-      border-radius: 8px; 
-      font-size: 1rem; 
-      outline: none;
-    }
-    select { 
-      width: 100%; 
-      padding: 14px; 
-      background: var(--orange) !important; 
-      color: white !important; 
-      border: none; 
-      border-radius: 8px; 
-      font-weight: 700; 
-      font-size: 1rem; 
-      cursor: pointer; 
-      appearance: auto; 
-    }
-    
-    /* The Responsive Button */
-    .btn { 
-      width: 100%; 
-      padding: 18px; 
-      background: white; 
-      color: black; 
-      border: none; 
-      border-radius: 12px; 
-      font-weight: 900; 
-      text-transform: uppercase; 
-      font-size: 1.1rem; 
-      cursor: pointer; 
-      margin-top: 10px; 
-      transition: transform 0.2s;
-    }
-    .btn:hover { transform: scale(1.02); }
+    input { width: 100%; padding: 14px; background: #1f1f1f; color: white; border: 1px solid var(--steel); border-radius: 8px; font-size: 1rem; outline: none; }
+    select { width: 100%; padding: 14px; background: var(--orange) !important; color: white !important; border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; appearance: auto; }
+    .btn { width: 100%; padding: 18px; background: white; color: black; border: none; border-radius: 12px; font-weight: 900; text-transform: uppercase; font-size: 1.1rem; cursor: pointer; margin-top: 10px; display: inline-block; text-decoration: none; text-align: center; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="logo">toolbox<span>PAY</span></div>
-    
     <h1>Spend Less Time On Admin.<br /><b>More Time On The Job.</b></h1>
     <p class="sub">Specialising in making trades profitable. Join the early access list to test ToolboxPay.</p>
     
     <div class="card">
-      <h2>Join Early Access</h2>
-      <form onsubmit="alert('Success! You are on the list.'); return false;">
-        <div class="group">
-          <label>Full Name</label>
-          <input type="text" placeholder="e.g. John Doe" required />
-        </div>
-        
-        <div class="group">
-          <label>Email Address</label>
-          <input type="email" placeholder="e.g. john@example.com" required />
-        </div>
-        
-        <div class="group">
-          <label>Your Trade</label>
-          <select required>
-            <option value="" disabled selected>Select your trade...</option>
-            <option>Builder</option>
-            <option>Electrician</option>
-            <option>Plumber</option>
-            <option>Landscaper</option>
-            <option>Carpenter</option>
-          </select>
-        </div>
-        
-        <button type="submit" class="btn">Get Early Access</button>
-      </form>
+      <div class="group"><label>Full Name</label><input type="text" placeholder="e.g. John Doe"></div>
+      <div class="group"><label>Email Address</label><input type="email" placeholder="e.g. john@example.com"></div>
+      <div class="group">
+        <label>Your Trade</label>
+        <select>
+          <option>Builder</option><option>Electrician</option><option>Plumber</option><option>Landscaper</option>
+        </select>
+      </div>
+      <button class="btn" data-tally-open="wa4D7q" data-tally-layout="modal">Get Early Access</button>
     </div>
   </div>
+  <script src="https://tally.so/Widgets/Embed/v1.js"></script>
 </body>
 </html>
