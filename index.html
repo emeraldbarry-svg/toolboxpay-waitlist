@@ -4,12 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ToolboxPay — Early Access Waitlist</title>
+  
   <link rel="icon" href="https://fav.farm/🟠" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+  
   <style>
+    /* ─── Variables & Reset ────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
     :root { 
       --orange: #ff6600; 
       --bg: #0a0a0a; 
@@ -17,73 +21,71 @@
       --white: #ffffff; 
       --muted: #999999; 
       --steel: #333333; 
-      --green: #4caf50; 
+      --radius: 14px;
     }
-    body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--white); line-height: 1.6; text-align: center; }
+    
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background-color: var(--bg); 
+      color: var(--white);
+      line-height: 1.6; 
+      text-align: center;
+    }
+    
     .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    .hero { padding: 80px 0; }
+    
+    /* ─── Header ─────────────────────────────────────────────── */
+    .topbar { padding: 32px 0; border-bottom: 1px solid var(--steel); margin-bottom: 40px; }
+    .logo { font-size: 1.6rem; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; }
+    .logo .white { color: var(--white); }
+    .logo .orange { color: var(--orange); text-transform: uppercase; }
+    
+    /* ─── Hero Section ───────────────────────────────────────── */
+    .hero { padding: 60px 0; }
     .hero h1 { font-size: clamp(2.2rem, 8vw, 4.2rem); font-weight: 900; line-height: 1.05; margin-bottom: 24px; text-transform: uppercase; letter-spacing: -1px; }
     .hero h1 .accent { color: var(--orange); }
-    .hero-sub { max-width: 600px; margin: 0 auto 48px; color: var(--muted); font-size: 1.1rem; }
+    .hero-sub { max-width: 600px; margin: 0 auto 48px; color: var(--muted); font-size: 1.25rem; }
+
+    /* ─── The Orange Trade Box Form ───────────────────────────── */
+    .form-card { 
+      background: var(--card); 
+      border: 1px solid var(--steel); 
+      border-radius: var(--radius); 
+      padding: 40px; 
+      max-width: 500px; 
+      margin: 0 auto 80px; 
+      text-align: left;
+    }
+    .form-card h2 { margin-bottom: 24px; font-weight: 800; text-transform: uppercase; text-align: center; }
     
-    .form-card { background: var(--card); border: 1px solid var(--steel); border-radius: 14px; padding: 40px; max-width: 500px; margin: 0 auto; text-align: left; }
-    .form-card h2 { margin-bottom: 24px; font-weight: 800; text-align: center; text-transform: uppercase; }
+    label { display: block; margin-bottom: 8px; font-size: 0.85rem; font-weight: 600; color: var(--muted); }
     
-    label { display: block; margin-bottom: 8px; font-size: 0.85rem; font-weight: 600; color: var(--white); }
-    
-    /* This makes the select box green like your screenshot */
+    /* Select box now uses Orange instead of Green */
     select {
       width: 100%;
-      background-color: var(--green) !important;
-      color: #000 !important;
+      background-color: var(--orange) !important;
+      color: var(--white) !important;
       border: none;
-      border-radius: 8px;
-      padding: 14px;
+      border-radius: 10px;
+      padding: 16px;
       font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
       margin-bottom: 20px;
       appearance: auto;
-      cursor: pointer;
     }
-    
+
     .cta-button {
       width: 100%;
-      background-color: var(--orange);
-      color: var(--white);
-      font-size: 1.2rem;
-      font-weight: 900;
+      background-color: var(--white);
+      color: var(--bg);
+      font-size: 1.1rem;
+      font-weight: 800;
       padding: 18px;
       border: none;
       border-radius: 12px;
       cursor: pointer;
+      transition: all 0.3s ease;
       text-transform: uppercase;
-      transition: transform 0.2s;
     }
-    .cta-button:hover { transform: scale(1.02); }
-  </style>
-</head>
-<body>
-  <section class="hero">
-    <div class="container">
-      <h1>Spend Less Time On Admin.<br /><span class="accent">More Time On The Job.</span></h1>
-      <p class="hero-sub">ToolboxPay helps trades businesses create quotes and invoices from their phone.</p>
-      
-      <div class="form-card">
-        <h2>Join Early Access</h2>
-        <form>
-          <label>Your Trade</label>
-          <select required>
-            <option value="" disabled selected>Select your trade...</option>
-            <option>Builder</option>
-            <option>Electrician</option>
-            <option>Plumber</option>
-            <option>Landscaper</option>
-          </select>
-          <button type="submit" class="cta-button">Get Early Access</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <script src="https://tally.so/Widgets/Embed/v1.js?v=99"></script>
-</body>
-</html>
+    .cta-button:hover { transform: translateY(-
