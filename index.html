@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
   
   <style>
-    /* ─── Base Styles ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     
     :root { 
@@ -33,19 +32,16 @@
     
     .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
     
-    /* ─── Header ─── */
     .topbar { padding: 32px 0; border-bottom: 1px solid var(--steel); margin-bottom: 40px; }
     .logo { font-size: 1.6rem; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; }
     .logo .white { color: var(--white); }
     .logo .orange { color: var(--orange); text-transform: uppercase; }
     
-    /* ─── Hero ─── */
     .hero { padding: 40px 0; }
     .hero h1 { font-size: clamp(2.2rem, 8vw, 4.2rem); font-weight: 900; line-height: 1.05; margin-bottom: 24px; text-transform: uppercase; letter-spacing: -1px; }
     .hero h1 .accent { color: var(--orange); }
     .hero-sub { max-width: 600px; margin: 0 auto 48px; color: var(--muted); font-size: 1.2rem; }
 
-    /* ─── Form Card (Restored Fields) ─── */
     .form-card { 
       background: var(--card); 
       border: 1px solid var(--steel); 
@@ -70,6 +66,7 @@
       padding: 14px;
       font-size: 1rem;
       font-family: inherit;
+      outline: none;
     }
 
     select {
@@ -85,6 +82,77 @@
       appearance: auto;
     }
 
+    /* Fixed Button: Now works with Tally or Links */
     .cta-button {
+      display: block;
       width: 100%;
       background-color: var(--white);
+      color: var(--bg);
+      font-size: 1.1rem;
+      font-weight: 900;
+      padding: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      margin-top: 10px;
+      text-decoration: none;
+      text-align: center;
+    }
+    .cta-button:hover { transform: translateY(-3px); opacity: 0.9; box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+
+    footer { padding: 60px 0; text-align: center; color: #555; font-size: 0.9rem; border-top: 1px solid var(--steel); }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <div class="logo"><span class="white">toolbox</span><span class="orange">PAY</span></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Spend Less Time On Admin.<br /><span class="accent">More Time On The Job.</span></h1>
+      <p class="hero-sub">Specialising in making trades profitable. Join the early access list to test ToolboxPay.</p>
+      
+      <div class="form-card">
+        <h2>Join Early Access</h2>
+        <form id="waitlistForm">
+          <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your name" required />
+          </div>
+
+          <div class="input-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="Email address" required />
+          </div>
+
+          <div class="input-group">
+            <label>Your Trade</label>
+            <select required>
+              <option value="" disabled selected>Select your trade...</option>
+              <option>Builder</option>
+              <option>Electrician</option>
+              <option>Plumber</option>
+              <option>Landscaper</option>
+              <option>Carpenter</option>
+            </select>
+          </div>
+
+          <a href="#tally-open" data-tally-open="your-tally-id" class="cta-button">Get Early Access</a>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 ToolboxPay. Specialising in Trade Profitability.</p>
+  </footer>
+
+  <script src="https://tally.so/Widgets/Embed/v1.js"></script>
+</body>
+</html>
