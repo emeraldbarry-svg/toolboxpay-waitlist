@@ -12,6 +12,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --orange: #ff6600;
+      --orange-hover: #e55a00;
       --bg: #111111;
       --card: #1a1a1a;
       --steel: #333333;
@@ -22,16 +23,33 @@
     }
     body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--white); line-height: 1.65; display: flex; flex-direction: column; min-height: 100vh; }
     .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-    .hero { text-align: center; padding: 80px 0 72px; }
-    .confirmation-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(76, 175, 80, 0.12); border: 1px solid rgba(76, 175, 80, 0.35); color: var(--green); padding: 8px 18px; border-radius: 999px; margin-bottom: 32px; font-weight: 600; font-size: 0.9rem; }
-    h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
-    .step-card { background: var(--card); border: 1px solid var(--steel); border-radius: var(--radius); padding: 28px 24px; transition: border-color 0.2s; text-align: left; }
-    .step-card:hover { border-color: var(--orange); }
-    .preview-image-wrap { border: 1px solid var(--steel); border-radius: 16px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.6); max-width: 450px; margin: 40px auto; }
-    .preview-image-wrap img { width: 100%; display: block; }
-    .logo { padding: 40px 0; text-align: center; font-weight: 800; font-size: 1.2rem; text-decoration: none; }
+    
+    .logo { padding: 40px 0; text-align: center; font-weight: 800; font-size: 1.4rem; text-decoration: none; display: block; }
     .logo .white { color: var(--white); }
     .logo .orange { color: var(--orange); }
+
+    .hero { text-align: center; padding: 40px 0 60px; }
+    .confirmation-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(76, 175, 80, 0.12); border: 1px solid rgba(76, 175, 80, 0.35); color: var(--green); padding: 8px 18px; border-radius: 999px; margin-bottom: 32px; font-weight: 600; font-size: 0.9rem; }
+    
+    h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
+    
+    .preview-image-wrap { border: 1px solid var(--steel); border-radius: 16px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.6); max-width: 450px; margin: 40px auto; }
+    .preview-image-wrap img { width: 100%; display: block; }
+
+    /* Share Section */
+    .share-box { background: var(--card); border: 2px dashed var(--steel); border-radius: var(--radius); padding: 32px; text-align: center; margin-bottom: 60px; }
+    .share-box h3 { margin-bottom: 12px; font-size: 1.2rem; }
+    .share-box p { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    
+    .share-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-share { background: var(--orange); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: background 0.2s; cursor: pointer; border: none; }
+    .btn-share:hover { background: var(--orange-hover); }
+    .btn-copy { background: #222; border: 1px solid var(--steel); }
+
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 80px; }
+    .step-card { background: var(--card); border: 1px solid var(--steel); border-radius: var(--radius); padding: 28px 24px; }
+    
+    footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--steel); color: #444; font-size: 0.8rem; }
   </style>
 </head>
 <body>
@@ -39,29 +57,54 @@
     <a href="index.html" class="logo"><span class="white">toolbox</span><span class="orange">PAY</span></a>
     
     <section class="hero">
-      <div class="confirmation-badge">✓ You are successfully on the list</div>
-      <h1>Welcome to the <span style="color: var(--orange);">ToolboxPay</span> Early Access</h1>
-      <p style="color: var(--muted); max-width: 600px; margin: 0 auto;">Cheers for joining us. While we prepare your account, here is a look at your new dashboard.</p>
+      <div class="confirmation-badge">✓ You are on the list</div>
+      <h1>Welcome to the <span style="color: var(--orange);">Founding Members</span></h1>
+      <p style="color: var(--muted); max-width: 600px; margin: 0 auto;">Cheers for joining. While we prepare your account, take a look at the dashboard you'll be using shortly.</p>
       
       <div class="preview-image-wrap">
         <img src="toolboxpay%20dashboard.png" alt="ToolboxPay Dashboard Preview">
       </div>
     </section>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 80px;">
+    <div class="share-box">
+      <h3>Invite a mate?</h3>
+      <p>Know someone else in the trades who is sick of paperwork? Send them a link.</p>
+      <div class="share-buttons">
+        <a href="https://wa.me/?text=Easy%20one%2C%20I%20just%20signed%20up%20for%20early%20access%20to%20ToolboxPay.%20It%20handles%20quotes%20and%20invoices%20from%20your%20phone.%20Check%20it%20out%3A%20https%3A%2F%2Ftoolboxpay.com" class="btn-share" target="_blank">Share on WhatsApp</a>
+        <button class="btn-share btn-copy" onclick="copyLink()">Copy Invite Link</button>
+      </div>
+    </div>
+
+    <div class="steps-grid">
       <div class="step-card">
         <div style="color: var(--orange); font-weight: 800; margin-bottom: 10px; font-size: 1.2rem;">01</div>
-        <p>Check your inbox for a confirmation email. It should arrive in the next few minutes.</p>
+        <p>No email? No worries. We have logged your entry in our secure database.</p>
       </div>
       <div class="step-card">
         <div style="color: var(--orange); font-weight: 800; margin-bottom: 10px; font-size: 1.2rem;">02</div>
-        <p>We release invites in small batches to ensure the platform stays fast for everyone.</p>
+        <p>Keep this page bookmarked. We'll announce the first batch of invites right here and on our socials.</p>
       </div>
       <div class="step-card">
         <div style="color: var(--orange); font-weight: 800; margin-bottom: 10px; font-size: 1.2rem;">03</div>
-        <p>Once you're in, you'll be able to send quotes and get paid before you leave the site.</p>
+        <p>Founding Members get lifetime access to our initial "No-Fee" pricing tier.</p>
       </div>
     </div>
   </div>
+
+  <footer>
+    <p>&copy; 2026 ToolboxPay. Built for the trades.</p>
+  </footer>
+
+  <script>
+    function copyLink() {
+      const link = "https://toolboxpay.com";
+      navigator.clipboard.writeText(link).then(() => {
+        const btn = document.querySelector('.btn-copy');
+        const originalText = btn.innerText;
+        btn.innerText = "Link Copied!";
+        setTimeout(() => { btn.innerText = originalText; }, 2000);
+      });
+    }
+  </script>
 </body>
 </html>
