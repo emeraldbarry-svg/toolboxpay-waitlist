@@ -25,32 +25,40 @@
     .hero h1 { font-size: clamp(2.2rem, 8vw, 4.2rem); font-weight: 900; line-height: 1.05; margin-bottom: 24px; text-transform: uppercase; letter-spacing: -1px; }
     .hero h1 .accent { color: var(--orange); }
     .hero-sub { max-width: 600px; margin: 0 auto 48px; color: var(--muted); font-size: 1.1rem; }
+    
     .form-card { background: var(--card); border: 1px solid var(--steel); border-radius: 14px; padding: 40px; max-width: 500px; margin: 0 auto; text-align: left; }
-    .form-card h2 { margin-bottom: 24px; font-weight: 800; text-align: center; }
+    .form-card h2 { margin-bottom: 24px; font-weight: 800; text-align: center; text-transform: uppercase; }
+    
     label { display: block; margin-bottom: 8px; font-size: 0.85rem; font-weight: 600; color: var(--white); }
+    
+    /* This makes the select box green like your screenshot */
     select {
       width: 100%;
       background-color: var(--green) !important;
       color: #000 !important;
       border: none;
       border-radius: 8px;
-      padding: 12px;
+      padding: 14px;
       font-weight: 700;
       margin-bottom: 20px;
       appearance: auto;
+      cursor: pointer;
     }
+    
     .cta-button {
       width: 100%;
       background-color: var(--orange);
       color: var(--white);
-      font-size: 1.1rem;
-      font-weight: 800;
+      font-size: 1.2rem;
+      font-weight: 900;
       padding: 18px;
       border: none;
-      border-radius: 99px;
+      border-radius: 12px;
       cursor: pointer;
       text-transform: uppercase;
+      transition: transform 0.2s;
     }
+    .cta-button:hover { transform: scale(1.02); }
   </style>
 </head>
 <body>
@@ -58,6 +66,7 @@
     <div class="container">
       <h1>Spend Less Time On Admin.<br /><span class="accent">More Time On The Job.</span></h1>
       <p class="hero-sub">ToolboxPay helps trades businesses create quotes and invoices from their phone.</p>
+      
       <div class="form-card">
         <h2>Join Early Access</h2>
         <form>
@@ -74,5 +83,7 @@
       </div>
     </div>
   </section>
+
+  <script src="https://tally.so/Widgets/Embed/v1.js?v=99"></script>
 </body>
 </html>
