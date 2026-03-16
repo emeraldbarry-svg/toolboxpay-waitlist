@@ -20,46 +20,50 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --orange: #ff6600; --bg: #111111; --white: #ffffff; --muted: #999999; --steel: #333333; }
     
-    /* Fix #2: Force White Text Everywhere */
-    body, p, h1, h2, h3, h4, h5, h6, span, label {
-      color: var(--white) !important;
-    }
-
     body { 
       font-family: 'Inter', sans-serif; 
       background-color: var(--bg); 
+      color: var(--white);
       line-height: 1.6; 
+      text-align: center;
     }
     
     .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    .topbar { padding: 24px 0; border-bottom: 1px solid var(--steel); }
-    .logo { font-size: 1.45rem; font-weight: 800; text-decoration: none; }
+    
+    .topbar { padding: 24px 0; border-bottom: 1px solid var(--steel); margin-bottom: 60px; }
+    .logo { font-size: 1.45rem; font-weight: 800; text-decoration: none; display: inline-block; }
     .logo .white { color: var(--white); }
     .logo .orange { color: var(--orange); }
     
-    .hero { padding: 60px 0 20px; text-align: center; }
-    .hero h1 { font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; text-transform: uppercase; }
+    .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; text-transform: uppercase; }
     .hero h1 .accent { color: var(--orange); }
-    
-    /* Improved Hero Subheadline */
-    .hero-sub { max-width:650px; margin:20px auto; color: var(--muted) !important; }
-    
-    /* Fix #3: Improved Form Card Contrast */
-    .form-card { 
-      background: var(--bg); 
-      border: 1px solid var(--steel);
-      border-radius: 16px; 
-      padding: 10px; 
-      max-width: 700px; 
-      margin: 0 auto 60px;
-      min-height: 600px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    .hero-sub { max-width: 600px; margin: 0 auto 40px; color: var(--muted); font-size: 1.2rem; }
+
+    /* The "Expert" CTA Button */
+    .cta-button {
+      background-color: var(--orange);
+      color: var(--white);
+      font-size: 1.25rem;
+      font-weight: 700;
+      padding: 20px 40px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+      box-shadow: 0 10px 30px rgba(255, 102, 0, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .preview-section { padding: 80px 0; border-top: 1px solid var(--steel); background: #0c0c0c; }
-    .preview-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .cta-button:hover {
+      transform: translateY(-3px);
+      background-color: #e65c00;
+    }
+
+    .preview-section { margin-top: 100px; padding: 80px 0; border-top: 1px solid var(--steel); background: #0c0c0c; }
+    .preview-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; text-align: left; }
     .preview-text h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; }
-    .preview-text p { color: var(--muted) !important; font-size: 1.15rem; }
+    .preview-text p { color: var(--muted); font-size: 1.15rem; }
     .preview-image-wrap { border: 1px solid var(--steel); border-radius: 12px; overflow: hidden; }
     .preview-image-wrap img { width: 100%; display: block; }
     
@@ -70,29 +74,20 @@
 <body>
   <header class="topbar">
     <div class="container">
-      <a href="#" class="logo">
-        <span class="white">toolbox</span><span class="orange">PAY</span>
-      </a>
+      <a href="#" class="logo"><span class="white">toolbox</span><span class="orange">PAY</span></a>
     </div>
   </header>
 
   <section class="hero">
     <div class="container">
       <h1>Spend Less Time On Admin.<br /><span class="accent">More Time On The Job.</span></h1>
-      <p class="hero-sub">Join the early access list and be one of the first trades businesses to test ToolboxPay.</p>
+      <p class="hero-sub">Specialising in making trades profitable. Join the early access list to test ToolboxPay.</p>
+      
+      <button class="cta-button" data-tally-open="ZjJooo" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
+        Join the Waitlist
+      </button>
     </div>
   </section>
-
-  <div class="container">
-    <div class="form-card">
-      <iframe data-tally-src="https://tally.so/embed/ZjJooo?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&v=FIX_FINAL" 
-              loading="lazy" 
-              width="100%" 
-              height="600" 
-              frameborder="0" 
-              title="Join ToolboxPay"></iframe>
-    </div>
-  </div>
 
   <section class="preview-section">
     <div class="container">
